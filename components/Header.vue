@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <h1 class="home-title" v-if="this.$nuxt.$route.path === '/'">
+    <h1 class="home-title" v-if="this.$nuxt.$route.name === 'index'">
       <nuxt-link
         to="/"
         style="box-shadow: none; text-decoration: none; color: inherit;"
@@ -12,7 +12,7 @@
         style="box-shadow: none; text-decoration: none; color: inherit;"
       >NUXT.JS PWA SURVIVAL STORE</nuxt-link>
     </h3>
-    <Bio v-if="this.$nuxt.$route.path === '/'" />
+    <Bio v-if="this.$nuxt.$route.name === 'index'" />
   </header>
 </template>
 

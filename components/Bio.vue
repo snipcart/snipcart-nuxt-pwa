@@ -1,6 +1,6 @@
 <template>
   <div class="bio">
-    <img v-if="this.$nuxt.$route.path !== '/'"
+    <img v-if="this.$nuxt.$route.name !== 'index'"
       src="~/static/images/chuck.svg"
     />
     <div>

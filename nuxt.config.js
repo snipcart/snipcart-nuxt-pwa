@@ -2,7 +2,7 @@ const path = require('path')
 import guides from "./contents/guides/guides.js"
 
 export default {
-  mode: 'spa',
+  mode: 'universal',
   /*
   ** Headers of the page
   */
@@ -66,17 +66,20 @@ export default {
     name: 'Nuxt.js PWA survival store',
     short_name: 'Nuxt.js PWA',
     lang: 'en',
-    display: 'fullscreen',
+    display: 'standalone',
   },
   /*
   ** Generate dynamic routes
   */
   generate: {
+    fallback: true,
     routes: [].concat(guides.map(guide => `guides/${guide}`))
   },
+  /*
+  ** Handle external assets
+  */
   workbox: {
     runtimeCaching: [
-      // Handle google fonts
       {
         urlPattern: 'https://fonts.googleapis.com/.*',
         handler: 'cacheFirst',
@@ -89,7 +92,26 @@ export default {
         method: 'GET',
         strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
       },
-      // TODO: Snipcart
+      {
+        urlPattern: 'https://cdn.snipcart.com/.*',
+        method: 'GET',
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+      },
+      {
+        urlPattern: 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js',
+        handler: 'cacheFirst',
+        method: 'GET',
+        strategyOptions: { cacheableResponse: { statuses: [0, 200] } }
+      }
     ]
+  },
+  /*
+  ** Allow dev tools in production
+  */
+  vue: {
+    config: {
+      productionTip: false,
+      devtools: true
+    }
   }
 }

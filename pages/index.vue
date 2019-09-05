@@ -17,7 +17,7 @@
                 :data-item-name="product.name"
                 :data-item-price="product.price"
                 :data-item-image="product.image"
-                :data-item-url="'/'">
+                :data-item-url="`https://snipcart-nuxt-pwa.netlify.com/`">
                 {{`$${product.price}`}}
               </button>
               <p class="product-name">{{product.name}}</p>
@@ -38,7 +38,7 @@ export default {
   components: {
     Testimonials,
   },
-  async asyncData ({ params }) {
+  async asyncData ({ route }) {
     const promises = guides.map(guide => import(`~/contents/guides/${guide}.md`))
     return { guides: await Promise.all(promises) }
   },

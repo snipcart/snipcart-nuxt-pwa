@@ -8,15 +8,15 @@
     <span v-html="html" class="markdown"></span>
     <div class="products">
       <article v-for="(product, index) in attributes.products" :key="index">
-        <img :src="product.image" :alt="product.name" />
+        <img :src="`../${product.image}`" :alt="product.name" />
         <button
           class="buy-button snipcart-add-item"
           :data-item-id="product.sku"
           :data-item-name="product.name"
           :data-item-price="product.price"
           :data-item-image="product.image"
-          :data-item-url="'/'"
-        >{{`$${product.price}`}}</button>
+          :data-item-url="`https://snipcart-nuxt-pwa.netlify.com${currentUrl}`"
+          >{{`$${product.price}`}}</button>
         <p class="product-name">{{product.name}}</p>
       </article>
     </div>
@@ -31,17 +31,13 @@ export default {
   components: {
     Bio,
   },
-  layout: "guide",
-  async asyncData({ params }) {
+  async asyncData({ params, route }) {
     const guideName = params.slug
-    try{
-      const markdownContent = await import(`~/contents/guides/${guideName}.md`)
-    } catch(e) {
-      error({ statusCode: 404, message: `${e}` })
-    }
+    const markdownContent = await import(`~/contents/guides/${guideName}.md`)
     return {
       attributes: markdownContent.attributes,
-      html: markdownContent.html
+      html: markdownContent.html,
+      currentUrl: route.path
     };
   },
   head() {
