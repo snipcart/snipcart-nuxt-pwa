@@ -1,0 +1,22 @@
+{
+  "name": "snipcart-nuxt-pwa",
+  "version": "1.0.0",
+  "description": "My first-class Nuxt.js project",
+  "author": "Michael Poirier-Ginter",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/pwa": "^2.6.0",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "frontmatter-markdown-loader": "^2.0.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0"
+  }
+}

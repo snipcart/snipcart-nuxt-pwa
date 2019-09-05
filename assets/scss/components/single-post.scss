@@ -1,0 +1,19 @@
+.single-post {
+  .bio {
+      display: flex;
+      max-width: 450px;
+      margin: 0 auto;
+      text-align: center;
+  }
+
+  @media screen and (max-width: 420px) {
+      .bio {
+          display: block;
+
+          img {
+              margin-bottom: 0;
+              float: left;
+          }
+      }
+  }
+}
