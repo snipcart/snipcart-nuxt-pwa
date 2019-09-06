@@ -1,22 +1,14 @@
-# nuxt-pwa-demo
+# Vue PWA: A Progressive Web Application Example With Nuxt 
 
-> My first-class Nuxt.js project
+![vue-pwa](https://snipcart.com/media/204668/vue-pwa.png)
 
-## Build Setup
+Today, we’ll be building a Vue PWA using Nuxt. More specifically, we will look at: 
 
-``` bash
-# install dependencies
-$ npm run install
+1) A quick review of Progressive Web Applications 
+2) Statistics showing the benefits of PWAs
+3) Why we’re building a Vue PWA this time around
+4) How to create your own Vue PWA
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+> *Read the [full tutorial here](https://snipcart.com/blog/vue-pwa)*
 
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+> *See the [live demo here](https://snipcart-nuxt-pwa.netlify.com/)*
