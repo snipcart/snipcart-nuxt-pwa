@@ -2,7 +2,9 @@
 
 ![vue-pwa](https://snipcart.com/media/204668/vue-pwa.png)
 
-Today, we’ll be building a Vue PWA using Nuxt. More specifically, we will look at: 
+Progressive web applications have been proven to increase traffic, user engagement, and conversions. Plus, they're not as difficult to create as you may think. 
+
+In today's guide, we’ll be building a Vue PWA using Nuxt. More specifically, we will look at: 
 
 1) A quick review of Progressive Web Applications 
 2) Statistics showing the benefits of PWAs
