@@ -25,7 +25,7 @@
           </div>
         </article>
       </div>
-      <Testimonals />
+      <Testimonials />
     </main>
   </div>
 </template>
